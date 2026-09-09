@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Brandon's Website</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- TODO: Find a nice looking color palette and font -->
   </head>
+
+  <!-- TODO: Fix body so it is 40% the width but doesn't shrink until that 40% is reached -->
+  <!--       Might need to fix it to a certain pixel length to accomplish this -->
+  <!-- TODO: Scrollable section navigator on the side for sub sections -->
   <body>
+    <!-- TODO: Implement Collapsable header -->
     <header>
       <nav class="nav-wrapper">
         <div class="nav1"><a href="">Brandon Baker</a></div>
@@ -18,11 +24,148 @@
       </nav>
     </header>
 
+    <!-- TODO: Organize the format of the welcome bit -->
+    <section>
+      <h1>Brandon Baker</h1>
+      <p>
+        Hi! My name is Brandon, a passionate problem solving software engineer
+        who has learned to be comfortable in the uncomfortable. Over the years,
+        I've learned to understand the importance of good communication,
+        building relationships, being a reliable team player, and the importance
+        of a GROWTH mindset.
+      </p>
+      <p>
+        I wanted to create this website to showcase a little bit about who I am
+        and where I come from! Here's to getting to know more about my work
+        project experience, some things I find FASCINATING, and my contacts.
+      </p>
+      <img height="120px" src="images/IMG_1247.jpeg" alt="" />
+    </section>
+
     <main>
       <section id="experience">
         <h1>Development Experience and Projects</h1>
         <h2>Work Experience</h2>
+        <ul>
+          <li>
+            <h4>Hymnary.org - Web developer/Server Administrator</h4>
+            <span>2024-25</span>
+            <p>
+              Hymnary.org is one of the largest database of hymns on the whole
+              internet, serving roughly 6.5 million users per year. At Hymnary,
+              I worked on developing features and functionality to improve the
+              user experience of worship leaders looking to organize their next
+              service, or curious about information from a specific text. I
+              added functionality to an existing LAMP stack and maintained
+              internal servers.
+            </p>
+          </li>
+          <li>
+            <h4>MyHymnary.org - Web developer/Server Administrator</h4>
+            <span>2024-25</span>
+            <p>
+              My.Hymnary.org is an extension of Hymnary.org, it builds off of
+              hymnary's hymn foundation/database but extends the accessibility
+              and functionality of hymnary.org. Similar to my work on hymnary, I
+              added functionality to this website and fixed any bugs that had
+              arose.
+            </p>
+          </li>
+          <li>
+            <h4>Gentex - Software Testing Engineer Intern</h4>
+            <span>2023</span>
+            <p>
+              Used Appium testing suite to ensure product works as intended.
+              Gained experience working with full-time developers in a scrum
+              environment. Wrote Tests for one of Gentex many well known mirrors
+              connectivity app as well as the smoke detector in the Place App.
+            </p>
+          </li>
+          <li>
+            <h4>Ace Pickleball Club - Assistant General Manager</h4>
+            <span>2025-26</span>
+            <p>
+              Ace Pickleball Club is a community of people who love pickleball,
+              pickleball training hub, and your all in one for growing community
+              in America's fastest growing sport, pickleball. Although this
+              isn't a traditional developer role, I was able to step into a
+              leadership role and try something new. I trained member
+              specialists to cultivate community, coached pickleball, and ran
+              behind the scenes operations to ensure the facility ran smoothly.
+            </p>
+          </li>
+        </ul>
+
+        <!-- TODO: Update Existing Project ReadMes and ensure the projects still work -->
+        <!-- TODO: Update Formatting on projects and add picture to each -->
         <h2>Projects</h2>
+        <ul>
+          <li>
+            <h4>Chess</h4>
+            <p>
+              Who doesn't love chess? This game is a classic mix of strategy,
+              problem solving, and rivalry all in one. Written in Java using its
+              GUI, this project practices object oriented programming,
+              inheritance, and basic logic functions for the pieces
+              functionality. JUnit Testing was also done to ensure pieces moved
+              expectantly.
+            </p>
+          </li>
+          <li>
+            <h4>Our Kitchen</h4>
+            <p>
+              Ever want to share a recipe with friends but didn't want to go
+              through the hassle of typing out the long list on your phone. Our
+              Kitchen allows users to not only save a recipe, but to
+              collaborately share and learn recipe from other chefs. This app
+              was written using Vue and TS.
+            </p>
+          </li>
+          <li>
+            <h4>Loot Raiders</h4>
+            <p>
+              Growing up playing video games almost non-stop, I don't know who
+              wouldn't want to play around with a game engine to make their own.
+              Loot raiders lays the foundations of a game where an adventurer's
+              goal is to reach the treasure by navigating the obstacles in his
+              path. This game was written in the Unity game engine using C#
+              scripting.
+            </p>
+          </li>
+          <li>
+            <h4>Zork</h4>
+            <p>
+              A recreation of the original Zork game where players use "normal"
+              sentences to direct where they would like to explore until the
+              goals are accomplished. This recreation was written in C++ to
+              explore the language and fundamental concepts.
+            </p>
+          </li>
+          <li>
+            <h4>Galaga</h4>
+            <p>
+              This game is a classic, retro shooter arcade game. The goal is to
+              destroy the bugs and survive the longest you can, accumulating the
+              highest score. This project helped me familiarize my object
+              oriented skills in Java to Python, the more "readable" language.
+            </p>
+          </li>
+        </ul>
+        <h2>Upcoming Projects</h2>
+        <ul>
+          <li>
+            <h4>Bible Guesser</h4>
+            <p></p>
+          </li>
+          <li>
+            <h4>Find A Hobby</h4>
+            <p></p>
+          </li>
+          <li>
+            <h4>Pickleball Paddle Finder</h4>
+          </li>
+        </ul>
+        Wow Brandon, You are AMBITIOUS
       </section>
       <section id="about">
         <h1>Who am I?</h1>
@@ -30,7 +173,13 @@
       </section>
       <section id="contact">
         <h1>Contant Information</h1>
-        <p>Don't hesitate to reach out</p>
+        <!-- TODO: Add formatting and icon to contact links -->
+        <ul>
+          <li>Email</li>
+          <li>Linked In</li>
+          <li>Github</li>
+        </ul>
+        <p>Don't hesitate to reach out, my inbox is open :)</p>
       </section>
     </main>
     <footer></footer>
