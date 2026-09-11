@@ -1,56 +1,77 @@
 *::before,
 *::after,
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --main-bg-color: #020225f3;
+  --sec-bg-color: #022131;
+  --turq-surf: #00b4d8;
+  --frost-blue: #90e0ef;
+  --font-color: white;
 }
 
 body {
-    background-color: rgb(22, 20, 17);
-    color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    width: 40%;
-    margin: 0 0 30% 30%;
+  background-color: var(--main-bg-color);
+
+  /* TODO: Fix the screen tear in the gradient */
+  background-image: linear-gradient(
+    to right bottom,
+    var(--main-bg-color) 0%,
+    #020627 14.3%,
+    #020b28 28.6%,
+    #020f2a 42.9%,
+    #02142c 57.1%,
+    #02182e 71.4%,
+    #021d2f 85.7%,
+    var(--sec-bg-color) 100%
+  );
+  color: var(--font-color);
+  font-family: "Inter", sans-serif;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .nav-wrapper {
-    /* TODO: Make navigation fixed and look good */
-    /* position: fixed; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid gray;
-    margin-top: 0.5em;
-    font-size: clamp(.75rem, 1.5vw, 1.25rem);
+  /* TODO: Make navigation fixed and look good */
+  /* position: fixed; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid gray;
+  margin-top: 0.5em;
+  font-size: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 .link-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    list-style-type: none;
-    margin-right: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+  margin-right: 1em;
 }
 
 a {
-    all: unset;
-    cursor: pointer;
+  all: unset;
+  cursor: pointer;
 }
 
 a:hover {
-    color: bisque;
+  color: bisque;
 }
 
 .nav1 {
-    margin-left: 2em;
-    margin-right: auto;
-    white-space: nowrap;
-    min-width: 0;
+  margin-left: 2em;
+  margin-right: auto;
+  white-space: nowrap;
+  min-width: 0;
 }
 
 .nav-item {
-    margin: 0px 1em;
+  margin: 0px 1em;
 }
 
-/* Make a media query to make nav a drop down upon certain screen size */
+/* TODO: Make a media query to make nav a drop down upon certain screen size */
