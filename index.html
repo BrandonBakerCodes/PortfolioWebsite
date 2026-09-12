@@ -11,14 +11,10 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <!-- TODO: Find a nice looking color palette and font -->
   </head>
 
-  <!-- TODO: Fix body so it is 40% the width but doesn't shrink until that 40% is reached -->
-  <!--       Might need to fix it to a certain pixel length to accomplish this -->
   <!-- TODO: Scrollable section navigator on the side for sub sections -->
   <body id="top">
-    <!-- TODO: Implement Collapsable header -->
     <header>
       <nav class="nav-wrapper">
         <div class="nav1"><a href="#top">Brandon Baker</a></div>
@@ -32,21 +28,27 @@
     <div class="content-spacer"></div>
 
     <!-- TODO: Organize the format of the welcome bit -->
-    <section>
-      <h1>Hey there!</h1>
-      <p>
-        Hi! My name is Brandon, a passionate problem solving software engineer
-        who has learned to be comfortable in the uncomfortable. Over the years,
-        I've learned to understand the importance of good communication,
-        building relationships, being a reliable team player, and the importance
-        of a GROWTH mindset.
-      </p>
-      <p>
+    <section class="intro-container">
+      <h1>Welcome To My Site!</h1>
+      <div class="introduction">
+        <p class="text-left-of-image">
+          Hi! My name is Brandon, a passionate problem solving software engineer
+          who has learned to be comfortable in the uncomfortable. Over the
+          years, I've learned to understand the importance of good
+          communication, building relationships, being a reliable team player,
+          and the importance of a GROWTH mindset.
+        </p>
+        <img
+          class="welcome-image"
+          src="images/IMG_1247.jpeg"
+          alt="Brandon smiling at the camera."
+        />
+      </div>
+      <p class="padding-15 box-item">
         I wanted to create this website to showcase a little bit about who I am
         and where I come from! Here's to getting to know more about my work
-        project experience, some things I find FASCINATING, and my contacts.
+        project experience and some things I find FASCINATING.
       </p>
-      <img height="120px" src="images/IMG_1247.jpeg" alt="" />
     </section>
     <main>
       <section id="experience">
