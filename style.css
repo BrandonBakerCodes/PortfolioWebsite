@@ -8,6 +8,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
 }
 
 :root {
@@ -40,6 +41,16 @@ body {
   margin: 0 auto;
 }
 
+.above-nav-blur {
+  position: fixed;
+  top: 0;
+  width: 1000px;
+  height: 20px;
+  background-color: transparent;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
 .nav-wrapper {
   background-color: hsl(216.3, 51.4%, 29%, 0.75);
   background: linear-gradient(
@@ -70,40 +81,57 @@ body {
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
-  min-height: 45vh;
-  max-width: 100%;
+  padding: 5%;
+  margin-top: 6rem;
   background-color: #052a55;
+  background: radial-gradient(circle, var(--frost-blue), var(--main-bg-color));
   border-radius: 15px;
 }
 
-.welcome-image {
-  height: 300px;
+.intro-container-image {
+  height: 200px;
   max-width: 100%;
-  width: 300px;
+  width: 200px;
   object-fit: cover;
   border-radius: 50%;
   flex-shrink: 0;
-  margin-right: 5%;
 }
 
-.introduction {
+.intro-container-name-text {
+  font-size: 30px;
+  font-weight: 800;
+  padding: 1rem;
+}
+
+.valued-items {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
+  padding: 1rem;
+  margin: 1rem 0 5rem 0rem;
+  text-wrap: nowrap;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
-.padding-15 {
-  padding: 0 15%;
-}
-
-.text-left-of-image {
-  max-width: 45ch;
-  padding: 0 5%;
-  text-wrap: wrap;
-}
-
-.content-spacer {
-  height: 100px;
+.chrome-text {
+  background: linear-gradient(
+    to left,
+    #8a8a8a 0%,
+    #b0b0b0 12%,
+    #f5f5f5 25%,
+    #ffffff 32%,
+    #c9c9c9 42%,
+    #8a8a8a 50%,
+    #eaeaea 60%,
+    #ffffff 68%,
+    #b0b0b0 82%,
+    #8a8a8a 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .link-wrapper {
@@ -117,6 +145,10 @@ body {
 a {
   all: unset;
   cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
 }
 
 a:hover {
@@ -138,32 +170,40 @@ a:hover {
   opacity: 60%;
 }
 
-#experience,
-#about,
-#contact {
-  padding-top: 75px;
-}
-
 /* TODO: Add drop down navigation for smaller screens */
-@media (max-width: 600px) {
-  .link-wrapper {
-    display: none;
+@media (max-width: 1000px) {
+  .valued-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    justify-items: center;
+    padding: 3%;
+  }
+  .chrome-text {
+    padding: 0.5rem;
   }
 }
 
 @media (max-width: 700px) {
-  .introduction {
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  .welcome-image {
+  .intro-container-image {
     width: 250px;
     height: 250px;
-    margin-right: 0px;
+    margin: 5% 0 5% 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .link-wrapper {
+    display: none;
   }
 
-  .text-left-of-image {
-    max-width: 100%;
-    padding: 0 15%;
+  .valued-items {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 400px) {
+  .valued-items {
+    grid-template-columns: 1fr;
   }
 }
