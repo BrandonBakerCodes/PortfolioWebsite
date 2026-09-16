@@ -285,7 +285,24 @@ body {
     border-box;
 }
 
-/* TODO: Add drop down navigation for smaller screens */
+.hamburger {
+  display: none;
+}
+
+.drop-down-links {
+  display: none;
+}
+
+.menu-item {
+  height: 120px;
+  width: 100%;
+  border: 1px solid var(--frost-blue);
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @media (max-width: 1000px) {
   .valued-items {
     display: grid;
@@ -345,6 +362,35 @@ body {
 @media (max-width: 600px) {
   .link-wrapper {
     display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    background-color: transparent;
+    color: white;
+    border: none;
+    margin-right: 4%;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .drop-down-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 65px;
+    width: 94%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+    border-radius: 5px;
+    background-color: rgba(28, 92, 122, 0.9);
+  }
+
+  .open {
+    max-height: 700px;
   }
 }
 
