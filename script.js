@@ -73,7 +73,7 @@ function scrollToCurrentCard(currentCard) {
 }
 
 let timeout;
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   clearTimeout(timeout);
   timeout = setTimeout(() => {
     scrollToCurrentCard(currentCard);

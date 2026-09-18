@@ -314,9 +314,9 @@ body {
   flex-direction: row;
   justify-content: start;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: hidden;
   height: 45vh;
-  padding: 0 32%;
+  padding: 0 30%;
   perspective: 1500px;
   transform-style: preserve-3d;
 }
@@ -326,17 +326,11 @@ body {
 }
 
 .project-card {
-  flex: 0 0 35rem;
-  height: 80%;
+  flex: 0 0 40rem;
+  height: 90%;
   padding: 3%;
   margin: -7rem;
-  border: 3px solid transparent;
   border-radius: 6px;
-  background-image: radial-gradient(
-    circle,
-    var(--frost-blue),
-    var(--main-bg-color)
-  );
   position: relative;
   transition: 0.5s ease;
   transform-style: preserve-3d;
@@ -357,12 +351,18 @@ body {
 
 .project-card p {
   position: absolute;
-  top: 16rem;
+  top: 20rem;
   padding: 1rem;
   margin: 3rem;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.9);
   border-radius: 5px;
+}
+
+.project-card-bg {
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
 }
 
 .chess-background {
@@ -459,20 +459,26 @@ body {
 }
 
 @media (max-width: 800px) {
+  .project-carousel-container {
+    height: auto;
+  }
+
   .project-card {
     flex: 0 0 30rem;
+    height: auto;
+    margin: 0 -7rem;
+  }
+
+  .project-card-bg {
+    height: 30rem;
   }
 
   .project-card p {
-    position: absolute;
-    top: 26rem;
-    left: -0.25rem;
+    position: static;
+    background-color: rgba(0, 0, 0, 0.95);
     padding: 1.5rem;
     margin: 0;
     width: 28.5rem;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.9);
-    border-radius: 5px;
   }
 
   .project-card h2 {
@@ -505,11 +511,11 @@ body {
   }
 
   .project-card {
-    flex: 0 0 20rem;
+    flex: 0 0 23.5rem;
   }
 
   .project-card p {
-    width: 18.25rem;
+    width: 21rem;
   }
 }
 
@@ -549,9 +555,18 @@ body {
   }
 
   .project-card h2 {
-    font-size: 1rem;
     top: 1rem;
     left: 2rem;
+  }
+
+  .buttons-wrapper {
+    text-align: center;
+  }
+  .project-btn {
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: 0.5rem;
+    margin: 0.5rem;
   }
 }
 
@@ -567,6 +582,10 @@ body {
 
   .project-card {
     flex: 0 0 18rem;
+  }
+
+  .project-card h2 {
+    font-size: 1rem;
   }
 
   .project-card p {
