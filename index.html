@@ -62,7 +62,7 @@
         </ul>
       </section>
 
-      <!-- TODO: Add Logo to gentex and ace, add VanillaTiltJS Cards, crop ace and gentex photos -->
+      <!-- TODO: add VanillaTiltJS Cards, Add shadows for a realistic effect -->
       <section id="experience">
         <h1 style="padding-top: 5%">Development Experience and Projects</h1>
         <h2 style="padding-bottom: 3%">Work Experience</h2>
@@ -167,13 +167,14 @@
             </div>
           </li>
         </ul>
+      </section>
 
-        <!-- TODO: Update Existing Project ReadMes and ensure the projects still work -->
-        <!-- TODO: Update Formatting on projects and add picture to each -->
-        <h2>Projects</h2>
-        <ul>
-          <li>
-            <h4>Chess</h4>
+      <!-- TODO: Get rid of card scroll on smaller screens -->
+      <section class="projects">
+        <h1>Projects</h1>
+        <ul class="project-carousel-container">
+          <li class="project-card chess-background">
+            <h2>Chess</h2>
             <p>
               Who doesn't love chess? This game is a classic mix of strategy,
               problem solving, and rivalry all in one. Written in Java using its
@@ -183,8 +184,8 @@
               expectantly.
             </p>
           </li>
-          <li>
-            <h4>Our Kitchen</h4>
+          <li class="project-card ourkitchen-background">
+            <h2>Our Kitchen</h2>
             <p>
               Ever want to share a recipe with friends but didn't want to go
               through the hassle of typing out the long list on your phone. Our
@@ -193,8 +194,8 @@
               was written using Vue and TS.
             </p>
           </li>
-          <li>
-            <h4>Loot Raiders</h4>
+          <li class="project-card lootraiders-background">
+            <h2>Loot Raiders</h2>
             <p>
               Growing up playing video games almost non-stop, I don't know who
               wouldn't want to play around with a game engine to make their own.
@@ -204,8 +205,8 @@
               scripting.
             </p>
           </li>
-          <li>
-            <h4>Zork</h4>
+          <li class="project-card zork-background">
+            <h2>Zork</h2>
             <p>
               A recreation of the original Zork game where players use "normal"
               sentences to direct where they would like to explore until the
@@ -213,8 +214,8 @@
               explore the language and fundamental concepts.
             </p>
           </li>
-          <li>
-            <h4>Galaga</h4>
+          <li class="project-card sw-galaga-background">
+            <h2>Star Wars Galaga</h2>
             <p>
               This game is a classic, retro shooter arcade game. The goal is to
               destroy the bugs and survive the longest you can, accumulating the
@@ -223,6 +224,14 @@
             </p>
           </li>
         </ul>
+        <div class="buttons-wrapper">
+          <button class="project-btn prev-btn">
+            <i class="fa-solid fa-arrow-left fa-2xl"></i>
+          </button>
+          <button class="project-btn next-btn">
+            <i class="fa-solid fa-arrow-right fa-2xl"></i>
+          </button>
+        </div>
         <h2>Upcoming Projects</h2>
         <ul>
           <li>

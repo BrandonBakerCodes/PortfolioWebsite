@@ -63,6 +63,7 @@ body {
   background-color: transparent;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
+  z-index: 100;
 }
 
 .nav-wrapper {
@@ -87,6 +88,7 @@ body {
   width: 1000px;
   height: 65px;
   font-size: 1rem;
+  z-index: 100;
 }
 
 .link-wrapper {
@@ -303,6 +305,114 @@ body {
   align-items: center;
 }
 
+.projects {
+  margin-top: 10rem;
+}
+
+.project-carousel-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  overflow-x: scroll;
+  height: 45vh;
+  padding: 0 32%;
+  perspective: 1500px;
+  transform-style: preserve-3d;
+}
+
+.project-carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.project-card {
+  flex: 0 0 35rem;
+  height: 80%;
+  padding: 3%;
+  margin: -7rem;
+  border: 3px solid transparent;
+  border-radius: 6px;
+  background-image: radial-gradient(
+    circle,
+    var(--frost-blue),
+    var(--main-bg-color)
+  );
+  position: relative;
+  transition: 0.5s ease;
+  transform-style: preserve-3d;
+  transition:
+    transform 0.4s ease,
+    filter 0.4s ease;
+  backface-visibility: hidden;
+}
+
+.project-card h2 {
+  position: absolute;
+  top: 2rem;
+  left: 4rem;
+  padding: 1rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+
+.project-card p {
+  position: absolute;
+  top: 16rem;
+  padding: 1rem;
+  margin: 3rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+}
+
+.chess-background {
+  background-image: url("images/ChessPhoto.png");
+  background-position: 40% 30%;
+}
+
+.ourkitchen-background {
+  background-image: url("images/OurKitchenPhoto.png");
+  background-position: 50% 35%;
+  background-size: 150% 130%;
+}
+
+.lootraiders-background {
+  background-image: url("images/LootRaidersPhoto.png");
+  background-size: 100% 100%;
+}
+
+.zork-background {
+  background-image: url("images/ZorkPhoto.png");
+}
+
+.sw-galaga-background {
+  background-image: url("images/StarWarsGalagaPhoto.png");
+  background-size: 100% 100%;
+  background-position: -1rem 0%;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.project-btn {
+  color: white;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 50%;
+  height: 5rem;
+  width: 5rem;
+  padding: 0.75rem;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+.project-btn:hover {
+  transition: 0.05s ease-in;
+  background-color: #00b4d8;
+}
+
 @media (max-width: 1000px) {
   .valued-items {
     display: grid;
@@ -348,6 +458,42 @@ body {
   }
 }
 
+@media (max-width: 800px) {
+  .project-card {
+    flex: 0 0 30rem;
+  }
+
+  .project-card p {
+    position: absolute;
+    top: 26rem;
+    left: -0.25rem;
+    padding: 1.5rem;
+    margin: 0;
+    width: 28.5rem;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 5px;
+  }
+
+  .project-card h2 {
+    font-size: 1.5rem;
+    top: 1rem;
+    left: 2rem;
+  }
+
+  .ourkitchen-background {
+    background-size: cover;
+  }
+
+  .lootraiders-background {
+    background-size: cover;
+  }
+
+  .sw-galaga-background {
+    background-size: cover;
+  }
+}
+
 @media (max-width: 700px) {
   .intro-container-image {
     width: 250px;
@@ -356,6 +502,14 @@ body {
   }
   .valued-items {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .project-card {
+    flex: 0 0 20rem;
+  }
+
+  .project-card p {
+    width: 18.25rem;
   }
 }
 
@@ -387,10 +541,17 @@ body {
     transition: max-height 0.5s ease;
     border-radius: 5px;
     background-color: rgba(28, 92, 122, 0.9);
+    z-index: 100;
   }
 
   .open {
     max-height: 700px;
+  }
+
+  .project-card h2 {
+    font-size: 1rem;
+    top: 1rem;
+    left: 2rem;
   }
 }
 
@@ -402,5 +563,13 @@ body {
   .work-experience-img-wrapper {
     width: 250px;
     height: 250px;
+  }
+
+  .project-card {
+    flex: 0 0 18rem;
+  }
+
+  .project-card p {
+    width: 16rem;
   }
 }
