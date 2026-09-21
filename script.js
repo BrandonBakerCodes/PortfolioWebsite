@@ -82,4 +82,3 @@ window.addEventListener("resize", () => {
 
 // Default to middle card
 scrollToCurrentCard(Math.floor(slider.length / 2));
-// console.log(slider[currentCard].style.transform.);

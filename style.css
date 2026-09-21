@@ -1,8 +1,6 @@
+*,
 *::before,
-*::after,
-body {
-  margin: 0;
-  padding: 0;
+*::after {
   box-sizing: border-box;
 }
 
@@ -53,6 +51,7 @@ body {
   max-width: 100%;
   width: 1000px;
   margin: 0 auto;
+  padding: 0;
 }
 
 .above-nav-blur {
@@ -413,6 +412,62 @@ body {
   background-color: #00b4d8;
 }
 
+.upproj-container {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  flex-wrap: wrap;
+}
+
+.upproj-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  min-height: 20rem;
+  min-width: 25rem;
+  margin: 1rem;
+  background-color: black;
+  border-radius: 6px;
+  position: relative;
+}
+
+.upproj-card h4 {
+  background: radial-gradient(circle, var(--frost-blue), var(--main-bg-color));
+  width: 100%;
+  padding: 1rem 2rem;
+  margin: 0;
+}
+
+.upproj-card p {
+  max-width: 35ch;
+  padding: 0 2rem;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+.upproj-card:hover {
+  p {
+    opacity: 1;
+  }
+
+  .question-icon {
+    opacity: 0;
+  }
+}
+
+.question-icon {
+  position: absolute;
+  top: 3rem;
+  width: 100%;
+  min-height: 10rem;
+  padding: 0;
+  margin-top: 16%;
+  opacity: 1;
+  color: rgb(82, 202, 242);
+  transition: opacity 1s ease;
+}
+
 @media (max-width: 1000px) {
   .valued-items {
     display: grid;
@@ -465,12 +520,11 @@ body {
 
   .project-card {
     flex: 0 0 30rem;
-    height: auto;
     margin: 0 -7rem;
   }
 
   .project-card-bg {
-    height: 30rem;
+    height: 25rem;
   }
 
   .project-card p {
@@ -478,7 +532,7 @@ body {
     background-color: rgba(0, 0, 0, 0.95);
     padding: 1.5rem;
     margin: 0;
-    width: 28.5rem;
+    width: 29rem;
   }
 
   .project-card h2 {
@@ -514,8 +568,12 @@ body {
     flex: 0 0 23.5rem;
   }
 
+  .project-card-bg {
+    height: 20rem;
+  }
+
   .project-card p {
-    width: 21rem;
+    width: 23rem;
   }
 }
 
@@ -570,6 +628,17 @@ body {
   }
 }
 
+@media (max-width: 500px) {
+  .upproj-card {
+    min-height: 20rem;
+    min-width: 10rem;
+  }
+
+  .project-card-bg {
+    height: 12.5rem;
+  }
+}
+
 @media (max-width: 400px) {
   .valued-items {
     grid-template-columns: 1fr;
@@ -589,6 +658,10 @@ body {
   }
 
   .project-card p {
-    width: 16rem;
+    width: 17.5rem;
+  }
+
+  .question-icon {
+    top: 4rem;
   }
 }
