@@ -82,3 +82,65 @@ window.addEventListener("resize", () => {
 
 // Default to middle card
 scrollToCurrentCard(Math.floor(slider.length / 2));
+
+const msDots = document.querySelector(".mystory-dots");
+const msMoreText = document.querySelector(".mystory-more-text");
+const msReadButton = document.querySelector(".mystory-read-btn");
+let msReadButtonIcon = msReadButton.querySelector("i");
+const pDots = document.querySelector(".pickleball-dots");
+const pMoreText = document.querySelector(".pickleball-more-text");
+const pReadButton = document.querySelector(".pickleball-read-btn");
+let pReadButtonIcon = pReadButton.querySelector("i");
+const gDots = document.querySelector(".gamer-dots");
+const gMoreText = document.querySelector(".gamer-more-text");
+const gReadButton = document.querySelector(".gamer-read-btn");
+let gReadButtonIcon = gReadButton.querySelector("i");
+const gamerImg = document.querySelector(".gamer-img");
+
+function expandText(str) {
+  if (str === "mystory") {
+    if (!msMoreText.classList.contains("open")) {
+      msMoreText.classList.toggle("open");
+      msDots.style.display = "none";
+      msReadButtonIcon.classList.replace("fa-chevron-down", "fa-chevron-up");
+    } else {
+      msMoreText.classList.toggle("open");
+      msDots.style.display = "inline";
+      msReadButtonIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+    }
+  } else if (str === "pickle") {
+    if (!pMoreText.classList.contains("open")) {
+      pMoreText.classList.toggle("open");
+      pDots.style.display = "none";
+      pReadButtonIcon.classList.replace("fa-chevron-down", "fa-chevron-up");
+    } else {
+      pMoreText.classList.toggle("open");
+      pDots.style.display = "inline";
+      pReadButtonIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+    }
+  } else {
+    if (!gMoreText.classList.contains("open")) {
+      gMoreText.classList.toggle("open");
+      gamerImg.classList.toggle("open");
+      gDots.style.display = "none";
+      gReadButtonIcon.classList.replace("fa-chevron-down", "fa-chevron-up");
+    } else {
+      gMoreText.classList.toggle("open");
+      gamerImg.classList.toggle("open");
+      gDots.style.display = "inline";
+      gReadButtonIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+    }
+  }
+}
+
+msReadButton.addEventListener("click", () => {
+  expandText("mystory");
+});
+
+pReadButton.addEventListener("click", () => {
+  expandText("pickle");
+});
+
+gReadButton.addEventListener("click", () => {
+  expandText("gamer");
+});

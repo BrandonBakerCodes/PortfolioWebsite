@@ -458,15 +458,73 @@ body {
 
 .question-icon {
   position: absolute;
-  top: 3rem;
-  width: 100%;
-  min-height: 10rem;
-  padding: 0;
-  margin-top: 16%;
+  top: 45%;
+  left: 35%;
   opacity: 1;
   color: rgb(82, 202, 242);
   transition: opacity 1s ease;
 }
+
+.mystory-container, .pickleball-container, .gamer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  background-color: #052a55;
+  border-radius: 6px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+}
+
+.mystory-dots, .pickleball-dots, .gamer-dots {
+  display: inline;
+}
+
+.mystory-more-text, .pickleball-more-text, .gamer-more-text {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, display 0.5s allow-discrete;
+}
+
+.gamer-img {
+  width: 200px;
+  height: 200px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.5s ease, display 0.5s allow-discrete;
+  margin: 1rem 0;
+  align-self: center;
+}
+
+.mystory-more-text.open, .pickleball-more-text.open, .gamer-more-text.open {
+  display: inline;
+  opacity: 1;
+}
+
+.gamer-img.open {
+  display: block;
+  opacity: 1;
+}
+
+@starting-style {
+  .mystory-more-text.open, .pickleball-more-text.open, .gamer-more-text.open{
+    opacity: 0;
+  }
+  .gamer-img.open {
+    opacity: 0;
+  }
+}
+
+
+.mystory-read-btn, .pickleball-read-btn, .gamer-read-btn {
+  align-self: center;
+  cursor: pointer;
+  z-index: 3;
+}
+
+
+
+
 
 @media (max-width: 1000px) {
   .valued-items {
@@ -662,6 +720,7 @@ body {
   }
 
   .question-icon {
-    top: 4rem;
+    top: 50%;
+    left: 30%;
   }
 }
