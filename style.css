@@ -465,7 +465,9 @@ body {
   transition: opacity 1s ease;
 }
 
-.mystory-container, .pickleball-container, .gamer-container {
+.mystory-container,
+.pickleball-container,
+.gamer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -476,14 +478,20 @@ body {
   margin-bottom: 3rem;
 }
 
-.mystory-dots, .pickleball-dots, .gamer-dots {
+.mystory-dots,
+.pickleball-dots,
+.gamer-dots {
   display: inline;
 }
 
-.mystory-more-text, .pickleball-more-text, .gamer-more-text {
+.mystory-more-text,
+.pickleball-more-text,
+.gamer-more-text {
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease, display 0.5s allow-discrete;
+  transition:
+    opacity 0.5s ease,
+    display 0.5s allow-discrete;
 }
 
 .gamer-img {
@@ -491,12 +499,16 @@ body {
   height: 200px;
   display: none;
   opacity: 0;
-  transition: opacity 0.5s ease, display 0.5s allow-discrete;
+  transition:
+    opacity 0.5s ease,
+    display 0.5s allow-discrete;
   margin: 1rem 0;
-  align-self: center;
+  float: right;
 }
 
-.mystory-more-text.open, .pickleball-more-text.open, .gamer-more-text.open {
+.mystory-more-text.open,
+.pickleball-more-text.open,
+.gamer-more-text.open {
   display: inline;
   opacity: 1;
 }
@@ -507,7 +519,9 @@ body {
 }
 
 @starting-style {
-  .mystory-more-text.open, .pickleball-more-text.open, .gamer-more-text.open{
+  .mystory-more-text.open,
+  .pickleball-more-text.open,
+  .gamer-more-text.open {
     opacity: 0;
   }
   .gamer-img.open {
@@ -515,16 +529,96 @@ body {
   }
 }
 
-
-.mystory-read-btn, .pickleball-read-btn, .gamer-read-btn {
+.mystory-read-btn,
+.pickleball-read-btn,
+.gamer-read-btn {
   align-self: center;
   cursor: pointer;
   z-index: 3;
 }
 
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 80%;
+  margin: auto;
+  padding: 3.5rem;
+  min-height: 30rem;
+  border-radius: 6px;
+  background-image: linear-gradient(
+    to right bottom,
+    #042696,
+    rgb(15, 110, 139)
+  );
+  font-family: inherit;
+  font-size: inherit;
+}
 
+.contact-container h1 {
+  margin-bottom: 3rem;
+}
 
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  row-gap: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+}
 
+.contact-form label {
+  align-self: start;
+  margin-left: 0.5rem;
+  font-size: 12px;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.contact-form input {
+  height: 3rem;
+  width: 100%;
+  max-width: 20rem;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 0.25rem;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+*::placeholder {
+  font-size: 12px;
+}
+
+.contact-form textarea {
+  height: 6rem;
+  width: 100%;
+  max-width: 20rem;
+  border-radius: 8px;
+  padding: 1rem;
+  font-family: inherit;
+  font-size: 14;
+  margin-bottom: 0.25rem;
+}
+
+.contact-form button {
+  color: white;
+  background-color: rgb(35, 125, 209);
+  font-family: inherit;
+  height: 3rem;
+  width: 13rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  color: white;
+  background-color: rgb(13, 46, 77);
+  transform: translateY(2px);
+}
 
 @media (max-width: 1000px) {
   .valued-items {
@@ -684,6 +778,13 @@ body {
     padding: 0.5rem;
     margin: 0.5rem;
   }
+
+  .contact-container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+
 }
 
 @media (max-width: 500px) {
