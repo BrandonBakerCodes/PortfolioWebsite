@@ -27,6 +27,12 @@ ul {
   padding: 0;
 }
 
+footer {
+  margin-top: 2rem;
+  padding: 1rem;
+  border-top: 1px solid white;
+}
+
 a:hover {
   color: bisque;
 }
@@ -620,6 +626,27 @@ body {
   transform: translateY(2px);
 }
 
+footer ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+footer ul li {
+  margin: 1em;
+  text-wrap: nowrap;
+}
+
+footer ul li:last-child {
+  margin-left: auto;
+}
+
+footer ul li a i {
+  font-size: x-large;
+  color: rgb(167, 229, 250);
+}
+
 @media (max-width: 1000px) {
   .valued-items {
     display: grid;
@@ -727,6 +754,14 @@ body {
   .project-card p {
     width: 23rem;
   }
+
+  footer ul li {
+    font-size: 14px;
+  }
+
+  footer ul li a i {
+    font-size: large;
+  }
 }
 
 @media (max-width: 600px) {
@@ -784,7 +819,18 @@ body {
     padding: 1rem;
   }
 
+  footer ul {
+    flex-wrap: wrap;
+  }
 
+  footer ul li:last-child {
+    margin-left: auto;
+  }
+
+  footer ul li a i {
+    /* font-size: x-large;
+    color: rgb(167, 229, 250); */
+  }
 }
 
 @media (max-width: 500px) {
