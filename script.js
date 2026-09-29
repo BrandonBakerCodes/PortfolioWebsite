@@ -95,7 +95,6 @@ const gDots = document.querySelector(".gamer-dots");
 const gMoreText = document.querySelector(".gamer-more-text");
 const gReadButton = document.querySelector(".gamer-read-btn");
 let gReadButtonIcon = gReadButton.querySelector("i");
-const gamerImg = document.querySelector(".gamer-img");
 
 function expandText(str) {
   if (str === "mystory") {
@@ -121,14 +120,30 @@ function expandText(str) {
   } else {
     if (!gMoreText.classList.contains("open")) {
       gMoreText.classList.toggle("open");
-      gamerImg.classList.toggle("open");
       gDots.style.display = "none";
       gReadButtonIcon.classList.replace("fa-chevron-down", "fa-chevron-up");
     } else {
       gMoreText.classList.toggle("open");
-      gamerImg.classList.toggle("open");
       gDots.style.display = "inline";
       gReadButtonIcon.classList.replace("fa-chevron-up", "fa-chevron-down");
+
+      if (!videoGamer.paused) {
+        videoGamer.pause();
+        gamerVideoPlayBtn.style.visibility = "hidden";
+        gamerVideoPauseBtn.style.visibility = "visible";
+      }
+
+      if (!videoPickle1.paused) {
+        videoPickle1.pause();
+        pickle1VideoPlayBtn.style.visibility = "hidden";
+        pickle1VideoPauseBtn.style.visibility = "visible";
+      }
+
+      if (!videoPickle2.paused) {
+        videoPickle2.pause();
+        pickle2VideoPlayBtn.style.visibility = "hidden";
+        pickle2VideoPauseBtn.style.visibility = "visible";
+      }
     }
   }
 }
@@ -144,3 +159,162 @@ pReadButton.addEventListener("click", () => {
 gReadButton.addEventListener("click", () => {
   expandText("gamer");
 });
+
+const videoGamer = document.querySelector(".lethal-video");
+const gamerVideoMuteBtn = document.querySelector(
+  ".gamer-video-container .mute-icon",
+);
+const gamerVideoVolumeBtn = document.querySelector(
+  ".gamer-video-container .volume-icon",
+);
+const gamerVideoPlayBtn = document.querySelector(
+  ".gamer-video-container .play-icon",
+);
+const gamerVideoPauseBtn = document.querySelector(
+  ".gamer-video-container .pause-icon",
+);
+
+// First video load
+if ((gamerVideoPlayBtn.style.visibility = "visible")) {
+  videoGamer.muted = !videoGamer.muted;
+  gamerVideoMuteBtn.style.visibility = "hidden";
+  gamerVideoVolumeBtn.style.visibility = "visible";
+}
+
+const videoClick = [videoGamer, gamerVideoPlayBtn, gamerVideoPauseBtn];
+videoClick.forEach((playToggle) => {
+  playToggle.addEventListener("click", () => {
+
+    if (videoGamer.paused) {
+      videoGamer.play();
+      gamerVideoPlayBtn.style.visibility = "hidden";
+      gamerVideoPauseBtn.style.visibility = "hidden";
+    } else {
+      videoGamer.pause();
+      gamerVideoPlayBtn.style.visibility = "hidden";
+      gamerVideoPauseBtn.style.visibility = "visible";
+    }
+  });
+});
+
+const gamerVideoSoundBtns = [gamerVideoMuteBtn, gamerVideoVolumeBtn];
+gamerVideoSoundBtns.forEach((btns) =>
+  btns.addEventListener("click", () => {
+    videoGamer.muted = !videoGamer.muted;
+
+    // Turn sound on
+    if (videoGamer.muted) {
+      gamerVideoMuteBtn.style.visibility = "visible";
+      gamerVideoVolumeBtn.style.visibility = "hidden";
+    } else {
+      gamerVideoMuteBtn.style.visibility = "hidden";
+      gamerVideoVolumeBtn.style.visibility = "visible";
+    }
+  }),
+);
+
+const videoPickle2 = document.querySelector(".pickle-video-2");
+const pickle2VideoMuteBtn = document.querySelector(
+  ".pickle-video-container-2 .mute-icon",
+);
+const pickle2VideoVolumeBtn = document.querySelector(
+  ".pickle-video-container-2 .volume-icon",
+);
+const pickle2VideoPlayBtn = document.querySelector(
+  ".pickle-video-container-2 .play-icon",
+);
+const pickle2VideoPauseBtn = document.querySelector(
+  ".pickle-video-container-2 .pause-icon",
+);
+
+// First video load
+if ((pickle2VideoPlayBtn.style.visibility = "visible")) {
+  videoPickle2.muted = !videoPickle2.muted;
+  pickle2VideoMuteBtn.style.visibility = "hidden";
+  pickle2VideoVolumeBtn.style.visibility = "visible";
+}
+
+const videoClickPickle2 = [videoPickle2, pickle2VideoPlayBtn, pickle2VideoPauseBtn];
+videoClickPickle2.forEach((playToggle) => {
+  playToggle.addEventListener("click", () => {
+
+    if (videoPickle2.paused) {
+      videoPickle2.play();
+      pickle2VideoPlayBtn.style.visibility = "hidden";
+      pickle2VideoPauseBtn.style.visibility = "hidden";
+    } else {
+      videoPickle2.pause();
+      pickle2VideoPlayBtn.style.visibility = "hidden";
+      pickle2VideoPauseBtn.style.visibility = "visible";
+    }
+  });
+});
+
+const pickle2VideoSoundBtns = [pickle2VideoMuteBtn, pickle2VideoVolumeBtn];
+pickle2VideoSoundBtns.forEach((btns) =>
+  btns.addEventListener("click", () => {
+    videoPickle2.muted = !videoPickle2.muted;
+
+    // Turn sound on
+    if (videoPickle2.muted) {
+      pickle2VideoMuteBtn.style.visibility = "visible";
+      pickle2VideoVolumeBtn.style.visibility = "hidden";
+    } else {
+      pickle2VideoMuteBtn.style.visibility = "hidden";
+      pickle2VideoVolumeBtn.style.visibility = "visible";
+    }
+  }),
+);
+
+const videoPickle1 = document.querySelector(".pickle-video-1");
+const pickle1VideoMuteBtn = document.querySelector(
+  ".pickle-video-container-1 .mute-icon",
+);
+const pickle1VideoVolumeBtn = document.querySelector(
+  ".pickle-video-container-1 .volume-icon",
+);
+const pickle1VideoPlayBtn = document.querySelector(
+  ".pickle-video-container-1 .play-icon",
+);
+const pickle1VideoPauseBtn = document.querySelector(
+  ".pickle-video-container-1 .pause-icon",
+);
+
+// First video load
+if ((pickle1VideoPlayBtn.style.visibility = "visible")) {
+  videoPickle1.muted = !videoPickle1.muted;
+  pickle1VideoMuteBtn.style.visibility = "hidden";
+  pickle1VideoVolumeBtn.style.visibility = "visible";
+}
+
+const videoClickPickle1 = [videoPickle1, pickle1VideoPlayBtn, pickle1VideoPauseBtn];
+videoClickPickle1.forEach((playToggle) => {
+  playToggle.addEventListener("click", () => {
+
+    if (videoPickle1.paused) {
+      videoPickle1.play();
+      pickle1VideoPlayBtn.style.visibility = "hidden";
+      pickle1VideoPauseBtn.style.visibility = "hidden";
+    } else {
+      videoPickle1.pause();
+      pickle1VideoPlayBtn.style.visibility = "hidden";
+      pickle1VideoPauseBtn.style.visibility = "visible";
+    }
+  });
+});
+
+const pickle1VideoSoundBtns = [pickle1VideoMuteBtn, pickle1VideoVolumeBtn];
+pickle1VideoSoundBtns.forEach((btns) =>
+  btns.addEventListener("click", () => {
+    videoPickle1.muted = !videoPickle1.muted;
+
+    // Turn sound on
+    if (videoPickle1.muted) {
+      pickle1VideoMuteBtn.style.visibility = "visible";
+      pickle1VideoVolumeBtn.style.visibility = "hidden";
+    } else {
+      pickle1VideoMuteBtn.style.visibility = "hidden";
+      pickle1VideoVolumeBtn.style.visibility = "visible";
+    }
+  }),
+);
