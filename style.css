@@ -558,7 +558,7 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 20rem;
-  min-width: 25rem;
+  min-width: 29rem;
   margin: 1rem;
   box-shadow: 0px 6px 10px rgba(58, 82, 105, 0.377);
   background-color: black;
@@ -571,8 +571,34 @@ body {
   box-shadow: 0px 6px 10px rgb(58, 82, 105);
 }
 
+.upproj-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-size: cover;
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+
+.upproj-card.displayed::before {
+  opacity: 1;
+}
+
+.bible-guesser-bg::before {
+  background-image: url(images/project-teasers/Bible-guesser-cover.png);
+}
+
+.find-hobby-bg::before {
+  background-image: url(images/project-teasers/Find-hobby-cover.png);
+}
+
+.paddle-finder-bg::before {
+  background-image: url(images/project-teasers/Paddle-finder-cover.png);
+}
+
 .upproj-card h4 {
-  background: radial-gradient(circle, var(--frost-blue), var(--main-bg-color));
+  background: black;
   width: 100%;
   padding: 1rem 2rem;
   margin: 0;
@@ -581,22 +607,21 @@ body {
   top: 0;
 }
 
-.upproj-card p {
-  margin-top: 20%;
-  max-width: 35ch;
-  padding: 0 2rem;
-  opacity: 0;
-  transition: opacity 2s ease;
-  text-align: center;
+.upproj-card.displayed h4{
+  display: none;
 }
 
 .question-icon {
   position: absolute;
   top: 45%;
-  left: 35%;
+  left: 37.5%;
   opacity: 1;
   color: rgb(82, 202, 242);
   transition: opacity 1s ease;
+}
+
+.upproj-card.displayed .question-icon {
+  opacity: 0;
 }
 
 .mystory-container,
@@ -1198,7 +1223,21 @@ footer ul li a i:hover {
 
   .upproj-card {
     min-height: 20rem;
-    min-width: 10rem;
+    min-width: 17rem;
+  }
+
+  .bible-guesser-bg::before {
+    background-position: center;
+  }
+
+   .find-hobby-bg::before, .paddle-finder-bg::before {
+    background-position: left;
+    background-position-x: -1.5rem;
+  }
+
+  .question-icon {
+    top: 50%;
+    left: 30%;
   }
 
   .project-card-bg {
@@ -1243,11 +1282,6 @@ footer ul li a i:hover {
 
   .project-card h2 {
     font-size: 1rem;
-  }
-
-  .question-icon {
-    top: 50%;
-    left: 30%;
   }
 
   .upproj-card p {

@@ -155,10 +155,7 @@ scrollToCurrentCard(Math.floor(slider.length / 2));
 const upProjCards = document.querySelectorAll(".upproj-card");
 upProjCards.forEach((card) => {
   card.addEventListener("mouseenter", () => {
-    const qIcon = card.querySelector(".question-icon");
-    const hiddenP = card.querySelector("p");
-    qIcon.style.opacity = 0;
-    hiddenP.style.opacity = 1;
+    card.classList.add("displayed")
   });
 });
 
