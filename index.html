@@ -18,7 +18,6 @@
     ></script>
   </head>
 
-  <!-- TODO: Scrollable section navigator on the side for sub sections -->
   <body id="top">
     <header>
       <div class="above-nav-blur"></div>
@@ -48,7 +47,9 @@
           alt="Brandon smiling at the camera."
         />
         <span class="intro-container-name-text">Brandon Baker</span>
-        A passionate software engineer who loves to make things.
+        <p class="intro-container-tagline">
+          A passionate software engineer who loves to make things.
+        </p>
       </section>
 
       <section>
@@ -61,115 +62,148 @@
           <li class="chrome-text">Open Ears</li>
         </ul>
       </section>
-
-      <!-- TODO: add VanillaTiltJS Cards, Add shadows for a realistic effect -->
       <section id="experience">
-        <h1 style="padding-top: 5%">Development Experience and Projects</h1>
-        <h2 style="padding-bottom: 3%">Work Experience</h2>
+        <div class="dev-exp-header">
+          <h1>Development Experience</h1>
+          <i class="fa-solid fa-code"></i>
+          <i class="fa-solid fa-bug"></i>
+          <i class="fa-solid fa-code-branch"></i>
+          <i class="fa-solid fa-laptop-code"></i>
+        </div>
         <ul>
-          <li class="work-experience-wrapper hymnary-color">
-            <div class="work-experience-wrapper-text">
-              <img
-                class="hymnary-logo"
-                src="images/hymnary-logo.png"
-                alt="hymnary logo"
-              />
-              <p>
-                Hymnary.org is a large online database of hymns and worship
-                resources used by millions of people each year. I worked on new
-                features and functionality within an existing LAMP stack,
-                improving tools for worship leaders and users researching hymns
-                and texts. I also maintained internal servers and supported the
-                site's day-to-day functionality.
-              </p>
-              <h4>Web Developer and Server Administrator</h4>
-            </div>
-            <div class="work-experience-img-wrapper">
-              <img
-                class="work-experience-img hymnary-img-offset"
-                src="images/hymnary-1-screenshot.png"
-                alt="a screenshot of a text (Amazing Grace) in hymnary"
-              />
-            </div>
-          </li>
-          <li class="work-experience-wrapper reverse-flex myhymnary-color">
-            <div class="work-experience-wrapper-text">
-              <div class="myhymnary-wrapper">
+          <li class="animate-scroll box-shadow-red">
+            <a
+              class="work-experience-wrapper hymnary-color"
+              href="https://hymnary.org"
+              target="_blank"
+            >
+              <div class="work-experience-wrapper-text">
                 <img
-                  class="myhymnary-logo"
-                  src="images/myhymnary-logo.svg"
-                  alt="myhymnary logo"
+                  class="hymnary-logo"
+                  src="images/hymnary-logo.png"
+                  alt="hymnary logo"
+                />
+                <h4>Web Developer and Server Administrator</h4>
+                <p>
+                  Hymnary.org is a large online database of hymns and worship
+                  resources used by millions of people each year. I worked on
+                  new features and functionality within an existing LAMP stack,
+                  improving tools for worship leaders and users researching
+                  hymns and texts. I also maintained internal servers and
+                  supported the site's day-to-day functionality.
+                </p>
+              </div>
+              <div class="work-experience-img-wrapper">
+                <img
+                  class="work-experience-img hymnary-img-offset"
+                  src="images/hymnary-1-screenshot.png"
+                  alt="a screenshot of a text (Amazing Grace) in hymnary"
                 />
               </div>
-              <p>
-                My.Hymnary extends Hymnary.org's hymn database into a suite of
-                tools for organizing, planning, and presenting worship music. I
-                contributed new functionality and fixed bugs across the
-                platform, working within an existing codebase to improve its
-                reliability and user experience.
-              </p>
-              <h4>Web developer and Server Administrator</h4>
-            </div>
-            <div class="work-experience-img-wrapper">
-              <img
-                class="work-experience-img myhymnary-img-offset"
-                src="images/myhymnary-screenshot.png"
-                alt="A screenshot of Amazing Grace on myhymnary"
-              />
-            </div>
+            </a>
           </li>
-          <li class="work-experience-wrapper gentex-color">
-            <div class="work-experience-wrapper-text">
-              <img src="images/gentex-logo-white.svg" alt="Gentex Logo" />
-              <p>
-                Worked with Appium to write and execute tests for Gentex
-                connectivity applications, including a mirror connectivity app
-                and the Place smoke detector. Collaborated with full-time
-                developers in a Scrum environment, gaining experience with
-                software testing and development practices in a production
-                setting.
-              </p>
-              <h4>Software Testing Engineer Intern</h4>
-            </div>
-            <div class="work-experience-img-wrapper">
-              <img
-                class="work-experience-img gentex-img-offset"
-                src="images/gentex-place-full.png"
-                alt="Gentex Place App Smoke Alarm Screen"
-              />
-            </div>
+          <li class="animate-scroll box-shadow-red">
+            <a
+              class="work-experience-wrapper reverse-flex myhymnary-color"
+              href="https://my.hymnary.org"
+              target="_blank"
+            >
+              <div class="work-experience-wrapper-text">
+                <div class="myhymnary-wrapper">
+                  <img
+                    class="myhymnary-logo"
+                    src="images/myhymnary-logo.svg"
+                    alt="myhymnary logo"
+                  />
+                </div>
+                <h4>Web developer and Server Administrator</h4>
+                <p>
+                  My.Hymnary extends Hymnary.org's hymn database into a suite of
+                  tools for organizing, planning, and presenting worship music.
+                  I contributed new functionality and fixed bugs across the
+                  platform, working within an existing codebase to improve its
+                  reliability and user experience.
+                </p>
+              </div>
+              <div class="work-experience-img-wrapper">
+                <img
+                  class="work-experience-img myhymnary-img-offset"
+                  src="images/myhymnary-screenshot.png"
+                  alt="A screenshot of Amazing Grace on myhymnary"
+                />
+              </div>
+            </a>
           </li>
-          <li class="work-experience-wrapper ace-color reverse-flex">
-            <div class="work-experience-wrapper-text">
-              <img
-                class="ace-logo"
-                src="images/ace-pickleball-logo.png"
-                alt=""
-              />
-              <p>
-                Took on a leadership role at Ace Pickleball Club, where I
-                trained and supported member specialists, coached pickleball,
-                and managed day to day facility operations. Balancing team
-                leadership, customer experience, and behind the scenes
-                operations strengthened my ability to lead people, solve
-                problems, communicate effectively, and take ownership.
-              </p>
-              <h4>Assistant General Manager</h4>
-            </div>
-            <div class="work-experience-img-wrapper">
-              <img
-                class="work-experience-img ace-img-offset"
-                src="images/ace-picture.jpeg"
-                alt="Brandon At Ace Pickleball Club Glow Night"
-              />
-            </div>
+          <li class="animate-scroll box-shadow-gray">
+            <a
+              class="work-experience-wrapper gentex-color"
+              href="https://gentex.com"
+              target="_blank"
+            >
+              <div class="work-experience-wrapper-text">
+                <img src="images/gentex-logo-white.svg" alt="Gentex Logo" />
+                <h4>Software Testing Engineer Intern</h4>
+                <p>
+                  Worked with Appium to write and execute tests for Gentex
+                  connectivity applications, including a mirror connectivity app
+                  and the Place smoke detector. Collaborated with full-time
+                  developers in a Scrum environment, gaining experience with
+                  software testing and development practices in a production
+                  setting.
+                </p>
+              </div>
+              <div class="work-experience-img-wrapper">
+                <img
+                  class="work-experience-img gentex-img-offset"
+                  src="images/gentex-place-full.png"
+                  alt="Gentex Place App Smoke Alarm Screen"
+                />
+              </div>
+            </a>
+          </li>
+          <li class="animate-scroll box-shadow-gray">
+            <a
+              class="work-experience-wrapper reverse-flex ace-color"
+              href="https://acepickleballclub.com"
+              target="_blank"
+            >
+              <div class="work-experience-wrapper-text">
+                <img
+                  class="ace-logo"
+                  src="images/ace-pickleball-logo.png"
+                  alt=""
+                />
+                <h4>Assistant General Manager</h4>
+                <p>
+                  Took on a leadership role at Ace Pickleball Club, where I
+                  trained and supported member specialists, coached pickleball,
+                  and managed day to day facility operations. Balancing team
+                  leadership, customer experience, and behind the scenes
+                  operations strengthened my ability to lead people, solve
+                  problems, communicate effectively, and take ownership.
+                </p>
+              </div>
+              <div class="work-experience-img-wrapper">
+                <img
+                  class="work-experience-img ace-img-offset"
+                  src="images/ace-picture.jpeg"
+                  alt="Brandon At Ace Pickleball Club Glow Night"
+                />
+              </div>
+            </a>
           </li>
         </ul>
       </section>
 
       <section class="projects">
-        <h1>Projects</h1>
-        <ul class="project-carousel-container">
+        <div class="prj-exp-header animate-scroll">
+          <h1>Projects</h1>
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <i class="fa-solid fa-microchip"></i>
+          <i class="fa-solid fa-database"></i>
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+        <ul class="project-carousel-container animate-scroll">
           <li class="project-card">
             <div class="project-card-bg chess-background">
               <h2>Chess</h2>
@@ -226,7 +260,7 @@
             </p>
           </li>
         </ul>
-        <div class="buttons-wrapper">
+        <div class="buttons-wrapper animate-scroll">
           <button class="project-btn prev-btn">
             <i class="fa-solid fa-arrow-left fa-2xl"></i>
           </button>
@@ -234,9 +268,14 @@
             <i class="fa-solid fa-arrow-right fa-2xl"></i>
           </button>
         </div>
-        <h2>Upcoming Projects</h2>
+        <div class="animate-scroll upproj-header">
+          <h1>Upcoming Projects</h1>
+          <i class="fa-solid fa-screwdriver-wrench"></i>
+          <i class="fa-solid fa-hourglass-start"></i>
+          <i class="fa-solid fa-compass-drafting"></i>
+        </div>
         <ul class="upproj-container">
-          <li class="upproj-card">
+          <li class="upproj-card animate-scroll">
             <h4 class="upproj-card-title">Bible Guesser</h4>
             <p>
               A daily scripture challenge inspired by games like Wordle. Bible
@@ -246,7 +285,7 @@
             </p>
             <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
           </li>
-          <li class="upproj-card">
+          <li class="upproj-card animate-scroll">
             <h4 class="upproj-card-title">Find A Hobby</h4>
             <p>
               An interactive way to discover your next hobby without sorting
@@ -256,7 +295,7 @@
             </p>
             <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
           </li>
-          <li class="upproj-card">
+          <li class="upproj-card animate-scroll">
             <h4 class="upproj-card-title">Pickleball Paddle Finder</h4>
             <div>
               <p>
@@ -272,12 +311,12 @@
         </ul>
       </section>
       <section id="about">
-        <div class="mystory-container">
+        <div class="mystory-container animate-scroll">
           <h2>My Story</h2>
           <p class="mystory-orig-text">
             I'm a problem solver who doesn't like leaving a problem unfinished.
             My path into software engineering, however, was anything but
-            straightforward.<span class="mystory-dots">...</span>
+            straight forward.<span class="mystory-dots">...</span>
             <span class="mystory-more-text">
               <span class="aboutme-br">
                 Growing up in Ada, Michigan, I didn't have a clear idea of what
@@ -984,10 +1023,11 @@
             </span>
           </p>
           <button class="mystory-read-btn">
+            <div class="tooltip-text">Read more...</div>
             <i class="fa-solid fa-chevron-down"></i>
           </button>
         </div>
-        <div class="pickleball-container">
+        <div class="pickleball-container animate-scroll">
           <h2>Part-Time Pickleball Addict</h2>
           <p class="pickleball-orig-text">
             When I'm not working, there's a good chance you'll find me playing
@@ -1348,10 +1388,11 @@
             </span>
           </p>
           <button class="pickleball-read-btn">
+            <div class="tooltip-text">Read more...</div>
             <i class="fa-solid fa-chevron-down"></i>
           </button>
         </div>
-        <div class="gamer-container">
+        <div class="gamer-container animate-scroll">
           <h2>Video Game Enthusiast</h2>
           <p class="gamer-orig-text">
             Ever since I can remember, video games have been a part of my life.
@@ -1504,13 +1545,14 @@
             </span>
           </p>
           <button class="gamer-read-btn">
+            <div class="tooltip-text">Read more...</div>
             <i class="fa-solid fa-chevron-down"></i>
           </button>
         </div>
       </section>
       <section id="contact">
-        <div class="contact-container">
-          <h2>Let's connect!</h2>
+        <div class="contact-container animate-scroll">
+          <h2>Let's Connect!</h2>
           <form
             class="contact-form"
             action="https://formspree.io/f/xyezppvw"
@@ -1574,9 +1616,10 @@
             ><i class="fa-brands fa-github"></i
           ></a>
         </li>
-        <li>
+        <li class="resume-download">
           <a href="files/Brandon%20Baker%20-%20Resume%20-%20SWE.pdf" download
-            ><i class="fa-solid fa-download"></i>&nbsp;&nbsp;Resume</a
+            ><i class="fa-solid fa-download"></i
+            ><span>&nbsp;&nbsp;Resume</span></a
           >
         </li>
         <li><i>Brandon Baker - Portfolio Website</i></li>
