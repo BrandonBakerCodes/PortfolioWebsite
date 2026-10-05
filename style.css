@@ -42,19 +42,8 @@ section {
 }
 
 body {
-  background-color: var(--main-bg-color);
+  background-color: #002233;
 
-  background-image: linear-gradient(
-    to right bottom,
-    var(--main-bg-color) 0%,
-    #020627 14.3%,
-    #020b28 28.6%,
-    #020f2a 42.9%,
-    #02142c 57.1%,
-    #02182e 71.4%,
-    #021d2f 85.7%,
-    var(--sec-bg-color) 100%
-  );
   color: var(--font-color);
   font-family: "Inter", sans-serif;
   max-width: 100%;
@@ -62,6 +51,76 @@ body {
   margin: 0 auto;
   padding: 0;
   overflow-x: hidden;
+}
+
+.spacer {
+  aspect-ratio: 3/2;
+  width: 100vw;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+}
+
+.layer1 {
+  background-image: url("./images/background/wave-haikei.svg");
+}
+
+.layer2 {
+  background-image: url("./images/background/upside-down-wave.svg");
+}
+
+.layer3 {
+  background-image: url("./images/background/wave-strip.svg");
+}
+
+.layer4 {
+  background-image: url("./images/background/circle-scatter-haikei.svg");
+}
+
+#experience {
+  position: relative;
+  isolation: isolate;
+  padding: 3rem 0;
+  margin-bottom: 0;
+}
+
+#experience::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  background-color: #0066ff;
+  z-index: -1;
+}
+
+.outer-contact {
+  position: relative;
+  isolation: isolate;
+}
+
+.outer-contact::before {
+  content: "";
+  position: absolute;
+  inset: 0 calc(50% - 50vw);
+  background-image: url(./images/background/circle-scatter-haikei.svg);
+  z-index: -1;
+}
+
+.upproj-container-outside {
+  position: relative;
+  isolation: isolate;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.upproj-container-outside::before {
+  content: "";
+  position: absolute;
+  inset: 10% calc(50% - 50vw) 0 calc(50% - 50vw);
+  background-color: #0066ff;
+  z-index: -1;
 }
 
 .animate-scroll {
@@ -195,7 +254,7 @@ body {
   justify-content: space-evenly;
   align-items: center;
   padding: 1rem;
-  margin: 1rem 0 5rem 0rem;
+  margin: 1rem 0 0rem 0rem;
   text-wrap: nowrap;
   font-size: 1rem;
   font-weight: 700;
@@ -231,7 +290,7 @@ body {
   padding: 0 1rem 0 1rem;
   margin-bottom: 1rem;
   margin: auto;
-  text-shadow: 2px 3px 5px rgb(177, 190, 218);
+  text-shadow: 1.5px 2px 5px rgba(177, 190, 218, 0.8);
 }
 
 .prj-exp-header {
@@ -242,9 +301,8 @@ body {
   text-wrap: nowrap;
   gap: 1rem;
   padding: 0 1rem 0 1rem;
-  margin: auto;
-  margin-bottom: 1rem;
-  text-shadow: 2px 3px 5px rgb(177, 190, 218);
+  margin: auto auto 4% auto;
+  text-shadow: 1.5px 2px 5px rgba(177, 190, 218, 0.8);
 }
 
 .upproj-header {
@@ -256,10 +314,8 @@ body {
   gap: 1rem;
   padding: 0 1rem 0 1rem;
   margin: auto;
-  text-shadow: 2px 3px 5px rgb(177, 190, 218);
+  text-shadow: 1.5px 2px 5px rgba(177, 190, 218, 0.8);
 }
-
-
 
 .work-experience-wrapper {
   display: flex;
@@ -277,20 +333,14 @@ body {
   color: white;
 }
 
-.box-shadow-red {
-  box-shadow: 0px 4px 10px rgba(192, 78, 34, 0.877);
-}
-
+.box-shadow-red,
 .box-shadow-gray {
-  box-shadow: 0px 4px 10px rgba(167, 166, 166, 0.877);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
 }
 
-.box-shadow-red:hover {
-  box-shadow: 0px 4px 10px rgba(250, 251, 252, 0.877);
-}
-
+.box-shadow-red:hover,
 .box-shadow-gray:hover {
-  box-shadow: 0px 4px 10px rgba(250, 251, 252, 0.877);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
 
 .work-experience-wrapper-text {
@@ -431,7 +481,7 @@ body {
 }
 
 .projects {
-  margin: 7rem 0 0 0;
+  margin: 0;
 }
 
 .project-carousel-container {
@@ -517,7 +567,7 @@ body {
 .buttons-wrapper {
   display: flex;
   justify-content: center;
-  margin: 1rem 0 8rem 0;
+  margin: 5% 0 0 0;
 }
 
 .project-btn {
@@ -549,7 +599,7 @@ body {
   justify-content: center;
   align-items: start;
   flex-wrap: wrap;
-  margin: 0 0 8rem 0;
+  margin: 0;
 }
 
 .upproj-card {
@@ -560,7 +610,7 @@ body {
   min-height: 20rem;
   min-width: 29rem;
   margin: 1rem;
-  box-shadow: 0px 6px 10px rgba(58, 82, 105, 0.377);
+  box-shadow: 0px 6px 10px rgba(15, 29, 44, 0.418);
   background-color: black;
   border-radius: 6px;
   position: relative;
@@ -568,7 +618,7 @@ body {
 
 .upproj-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0px 6px 10px rgb(58, 82, 105);
+  box-shadow: 0px 6px 10px rgba(15, 29, 44, 0.925);
 }
 
 .upproj-card::before {
@@ -607,7 +657,7 @@ body {
   top: 0;
 }
 
-.upproj-card.displayed h4{
+.upproj-card.displayed h4 {
   display: none;
 }
 
@@ -639,7 +689,7 @@ body {
 }
 
 .gamer-container {
-  margin-bottom: 8rem;
+  margin-bottom: 0rem;
 }
 
 .mystory-container:hover,
@@ -701,7 +751,7 @@ body {
 .pickleball-container h2,
 .gamer-container h2 {
   align-self: start;
-  text-shadow: 2px 3px 5px rgb(177, 190, 218);
+  text-shadow: 1.5px 2px 5px rgba(177, 190, 218, 0.8);
 }
 
 .mystory-orig-text,
@@ -1004,12 +1054,12 @@ footer ul li a i:hover {
 }
 
 @media (max-width: 1000px) {
+  .spacer {
+    height: 200px;
+  }
 
-
-   .dev-exp-header, .prj-exp-header, .upproj-header {
-    justify-content: center;
-    margin: auto;
-    text-align: center;
+  .buttons-wrapper {
+    margin: 10% 0 0 0;
   }
 
   .valued-items {
@@ -1203,12 +1253,12 @@ footer ul li a i:hover {
 }
 
 @media (max-width: 500px) {
-
   .dev-exp-header i {
     display: none;
   }
 
-   .dev-exp-header, .upproj-header {
+  .dev-exp-header,
+  .upproj-header {
     text-wrap: wrap;
   }
 
@@ -1216,10 +1266,9 @@ footer ul li a i:hover {
     display: none;
   }
 
-  .upproj-header i{
+  .upproj-header i {
     display: none;
   }
-
 
   .upproj-card {
     min-height: 20rem;
@@ -1230,7 +1279,8 @@ footer ul li a i:hover {
     background-position: center;
   }
 
-   .find-hobby-bg::before, .paddle-finder-bg::before {
+  .find-hobby-bg::before,
+  .paddle-finder-bg::before {
     background-position: left;
     background-position-x: -1.5rem;
   }

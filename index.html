@@ -38,7 +38,6 @@
         <li class="menu-item"><a href="#contact">Contact</a></li>
       </ul>
     </header>
-
     <main>
       <section class="intro-container">
         <img
@@ -62,6 +61,8 @@
           <li class="chrome-text">Open Ears</li>
         </ul>
       </section>
+
+      <div class="spacer layer1"></div>
       <section id="experience">
         <div class="dev-exp-header">
           <h1>Development Experience</h1>
@@ -195,6 +196,7 @@
         </ul>
       </section>
 
+      <div class="spacer layer2"></div>
       <section class="projects">
         <div class="prj-exp-header animate-scroll">
           <h1>Projects</h1>
@@ -268,29 +270,32 @@
             <i class="fa-solid fa-arrow-right fa-2xl"></i>
           </button>
         </div>
-        <div class="animate-scroll upproj-header">
-          <h1>Upcoming Projects</h1>
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-          <i class="fa-solid fa-hourglass-start"></i>
-          <i class="fa-solid fa-compass-drafting"></i>
+        <div class="upproj-container-outside">
+          <div class="spacer layer1"></div>
+          <div class="animate-scroll upproj-header">
+            <h1>Upcoming Projects</h1>
+            <i class="fa-solid fa-screwdriver-wrench"></i>
+            <i class="fa-solid fa-hourglass-start"></i>
+            <i class="fa-solid fa-compass-drafting"></i>
+          </div>
+          <ul class="upproj-container">
+            <li class="upproj-card animate-scroll bible-guesser-bg">
+              <h4 class="upproj-card-title">Project #1</h4>
+              <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
+            </li>
+            <li class="upproj-card animate-scroll find-hobby-bg">
+              <h4 class="upproj-card-title">Project #2</h4>
+              <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
+            </li>
+            <li class="upproj-card animate-scroll paddle-finder-bg">
+              <h4 class="upproj-card-title">Project #3</h4>
+              <div></div>
+              <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
+            </li>
+          </ul>
         </div>
-        <ul class="upproj-container">
-          <li class="upproj-card animate-scroll bible-guesser-bg">
-            <h4 class="upproj-card-title">Project #1</h4>
-            <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
-          </li>
-          <li class="upproj-card animate-scroll find-hobby-bg">
-            <h4 class="upproj-card-title">Project #2</h4>
-            <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
-          </li>
-          <li class="upproj-card animate-scroll paddle-finder-bg">
-            <h4 class="upproj-card-title">Project #3</h4>
-            <div>
-            </div>
-            <i class="fa-solid fa-question fa-bounce question-icon fa-6x"></i>
-          </li>
-        </ul>
       </section>
+      <div class="spacer layer2"></div>
       <section id="about">
         <div class="mystory-container animate-scroll">
           <h2>My Story</h2>
@@ -1531,52 +1536,55 @@
           </button>
         </div>
       </section>
+      <div class="spacer layer3"></div>
       <section id="contact">
-        <div class="contact-container animate-scroll">
-          <h2>Let's Connect!</h2>
-          <form
-            class="contact-form"
-            action="https://formspree.io/f/xyezppvw"
-            method="POST"
-          >
-            <label for="Name">Name</label>
-            <input
-              type="text"
-              placeholder="Name"
-              name="Name"
-              id="Name"
-              required
-            />
+        <div class="outer-contact">
+          <div class="contact-container animate-scroll">
+            <h2>Let's Connect!</h2>
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/xyezppvw"
+              method="POST"
+            >
+              <label for="Name">Name</label>
+              <input
+                type="text"
+                placeholder="Name"
+                name="Name"
+                id="Name"
+                required
+              />
 
-            <label for="Email">Email</label>
-            <input
-              type="email"
-              placeholder="Email"
-              name="Email"
-              id="Email"
-              required
-            />
+              <label for="Email">Email</label>
+              <input
+                type="email"
+                placeholder="Email"
+                name="Email"
+                id="Email"
+                required
+              />
 
-            <label for="Subject">Subject</label>
-            <input
-              type="text"
-              placeholder="Subject"
-              name="Subject"
-              id="Subject"
-              required
-            />
+              <label for="Subject">Subject</label>
+              <input
+                type="text"
+                placeholder="Subject"
+                name="Subject"
+                id="Subject"
+                required
+              />
 
-            <label for="Message">Message</label>
-            <textarea
-              placeholder="Message..."
-              name="Message"
-              required
-              id="Message"
-              cols="40"
-              rows="5"
-            ></textarea>
-            <button type="submit">Submit</button>
-          </form>
+              <label for="Message">Message</label>
+              <textarea
+                placeholder="Message..."
+                name="Message"
+                required
+                id="Message"
+                cols="40"
+                rows="5"
+              ></textarea>
+              <button type="submit">Submit</button>
+            </form>
+          </div>
         </div>
       </section>
     </main>
