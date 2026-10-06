@@ -155,7 +155,7 @@ scrollToCurrentCard(Math.floor(slider.length / 2));
 const upProjCards = document.querySelectorAll(".upproj-card");
 upProjCards.forEach((card) => {
   card.addEventListener("mouseenter", () => {
-    card.classList.add("displayed")
+    card.classList.add("displayed");
   });
 });
 
