@@ -154,7 +154,7 @@ scrollToCurrentCard(Math.floor(slider.length / 2));
 
 const upProjCards = document.querySelectorAll(".upproj-card");
 upProjCards.forEach((card) => {
-  card.addEventListener("mouseenter", () => {
+  card.addEventListener("mouseover", () => {
     card.classList.add("displayed");
   });
 });
@@ -256,6 +256,11 @@ const gamerVideoPauseBtn = document.querySelector(
   ".gamer-video-container .pause-icon",
 );
 
+// If using mobile device, use native video player
+const isMobile =
+  window.matchMedia("(pointer: coarse)").matches ||
+  window.matchMedia("(hover: none)").matches;
+
 // First video load
 if ((gamerVideoPlayBtn.style.visibility = "visible")) {
   videoGamer.muted = !videoGamer.muted;
@@ -266,6 +271,14 @@ if ((gamerVideoPlayBtn.style.visibility = "visible")) {
 const videoClick = [videoGamer, gamerVideoPlayBtn, gamerVideoPauseBtn];
 videoClick.forEach((playToggle) => {
   playToggle.addEventListener("click", () => {
+    if (isMobile) {
+      videoGamer.play();
+      gamerVideoPlayBtn.style.visibility = "hidden";
+      gamerVideoVolumeBtn.style.visibility = "hidden";
+      gamerVideoMuteBtn.style.visibility = "hidden";
+      return;
+    }
+
     if (videoGamer.paused) {
       videoGamer.play();
       gamerVideoPlayBtn.style.visibility = "hidden";
@@ -322,6 +335,14 @@ const videoClickPickle2 = [
 ];
 videoClickPickle2.forEach((playToggle) => {
   playToggle.addEventListener("click", () => {
+    if (isMobile) {
+      videoPickle2.play();
+      pickle2VideoPlayBtn.style.visibility = "hidden";
+      pickle2VideoVolumeBtn.style.visibility = "hidden";
+      pickle2VideoMuteBtn.style.visibility = "hidden";
+      return;
+    }
+
     if (videoPickle2.paused) {
       videoPickle2.play();
       pickle2VideoPlayBtn.style.visibility = "hidden";
@@ -378,6 +399,14 @@ const videoClickPickle1 = [
 ];
 videoClickPickle1.forEach((playToggle) => {
   playToggle.addEventListener("click", () => {
+    if (isMobile) {
+      videoPickle1.play();
+      pickle1VideoPlayBtn.style.visibility = "hidden";
+      pickle1VideoVolumeBtn.style.visibility = "hidden";
+      pickle1VideoMuteBtn.style.visibility = "hidden";
+      return;
+    }
+
     if (videoPickle1.paused) {
       videoPickle1.play();
       pickle1VideoPlayBtn.style.visibility = "hidden";

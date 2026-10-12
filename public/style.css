@@ -163,8 +163,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 1.5px solid rgba(87, 233, 243, 50%);
-  border-radius: 10px;
+  border: 3px solid rgba(87, 233, 243, 50%);
+  border-left: none;
+  border-right: none;
+  border-radius: 15px;
   max-width: 100%;
   width: 1000px;
   height: 65px;
@@ -370,10 +372,6 @@ body {
   object-position: left top;
 }
 
-.hymnary-img-offset {
-  object-view-box: xywh(40px 90px 800px 800px);
-}
-
 .hymnary-logo {
   width: 100%;
   height: 100%;
@@ -392,18 +390,13 @@ body {
   padding: 5%;
 }
 
-.myhymnary-img-offset {
-  object-view-box: xywh(0px 90px 1050px 1050px);
-}
-
 .gentex-img-offset {
   object-fit: contain;
   object-position: center;
 }
 
 .ace-img-offset {
-  object-fit: fill;
-  object-view-box: xywh(300px 750px 2600px 2600px);
+  object-fit: cover;
 }
 
 .ace-logo {
@@ -462,9 +455,12 @@ body {
 .menu-item {
   height: 100px;
   width: 100%;
-  border-radius: 5px;
   border: 2px solid rgba(0, 0, 0, 0.5);
   border-top: none;
+}
+
+.menu-item:first-child {
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
 }
 
 .menu-item:hover {
@@ -489,7 +485,7 @@ body {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  height: 40vh;
+  min-height: 30rem;
   width: 100vw;
   margin: 0 0 0 calc(50% - 50vw);
   overflow-x: clip;
@@ -539,27 +535,27 @@ body {
 }
 
 .chess-background {
-  background-image: url("images/ChessPhoto.png");
+  background-image: url("images/ChessPhoto.webp");
   background-position: 40% 30%;
 }
 
 .ourkitchen-background {
-  background-image: url("images/OurKitchenPhoto.png");
+  background-image: url("images/OurKitchenPhoto.webp");
   background-position: 50% 35%;
   background-size: 150% 130%;
 }
 
 .lootraiders-background {
-  background-image: url("images/LootRaidersPhoto.png");
+  background-image: url("images/LootRaidersPhoto.webp");
   background-size: 100% 100%;
 }
 
 .zork-background {
-  background-image: url("images/ZorkPhoto.png");
+  background-image: url("images/ZorkPhoto.webp");
 }
 
 .sw-galaga-background {
-  background-image: url("images/StarWarsGalagaPhoto.png");
+  background-image: url("images/StarWarsGalagaPhoto.webp");
   background-size: 100% 100%;
   background-position: -1rem 0%;
 }
@@ -636,15 +632,15 @@ body {
 }
 
 .bible-guesser-bg::before {
-  background-image: url(images/project-teasers/Bible-guesser-cover.png);
+  background-image: url(images/project-teasers/Bible-guesser-cover.webp);
 }
 
 .find-hobby-bg::before {
-  background-image: url(images/project-teasers/Find-hobby-cover.png);
+  background-image: url(images/project-teasers/Find-hobby-cover.webp);
 }
 
 .paddle-finder-bg::before {
-  background-image: url(images/project-teasers/Paddle-finder-cover.png);
+  background-image: url(images/project-teasers/Paddle-finder-cover.webp);
 }
 
 .upproj-card h4 {
@@ -1017,6 +1013,11 @@ body {
   transform: translateY(2px);
 }
 
+.hp-field {
+  position: absolute;
+  left: -9999px;
+}
+
 footer ul {
   display: flex;
   flex-direction: row;
@@ -1058,10 +1059,6 @@ footer ul li a i:hover {
     height: 200px;
   }
 
-  .buttons-wrapper {
-    margin: 10% 0 0 0;
-  }
-
   .valued-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -1084,10 +1081,10 @@ footer ul li a i:hover {
   }
 
   .nav-wrapper {
-    width: 94%;
-  }
-  .above-nav-blur {
-    width: 94%;
+    margin-top: 0;
+    left: 0;
+    border-radius: 0px;
+    height: 80px;
   }
 
   .work-experience-wrapper-text {
@@ -1207,8 +1204,9 @@ footer ul li a i:hover {
     justify-content: center;
     align-items: center;
     position: fixed;
-    top: 65px;
-    width: 94%;
+    top: 64px;
+    width: 100%;
+    left: 0;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease;
@@ -1253,6 +1251,11 @@ footer ul li a i:hover {
 }
 
 @media (max-width: 500px) {
+
+  .dev-exp-header {
+    text-align: center;
+  }
+
   .dev-exp-header i {
     display: none;
   }
@@ -1292,6 +1295,10 @@ footer ul li a i:hover {
 
   .project-card-bg {
     height: 12.5rem;
+  }
+
+  .buttons-wrapper {
+    margin: 0;
   }
 
   .pickle-video-container-1 {
