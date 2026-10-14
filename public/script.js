@@ -133,15 +133,33 @@ function scrollToCurrentCard(center) {
 
     card.style.zIndex = totalCards - distance;
 
+    const techLogos = card.querySelectorAll(".logo-container");
+
     if (distance === 0) {
       card.style.transform = `translateX(${shiftX}px) scale(1) rotateY(0deg)`;
       card.style.filter = "none";
       card.style.boxShadow = "0px 4px 10px rgb(156, 156, 156)";
+
+      techLogos.forEach((techLogo) => {
+        techLogo.addEventListener("mouseenter", () => {
+          techLogo.style.scale = 1.2;
+        });
+
+        techLogo.addEventListener("mouseleave", () => {
+          techLogo.style.scale = 1;
+        });
+      });
     } else {
       const tilt = offset > 0 ? -40 : 40;
       card.style.transform = `translateX(${shiftX}px) scale(${1 - 0.2 * distance}) rotateY(${tilt}deg) perspective(20px)`;
       card.style.filter = "brightness(70%)";
       card.style.boxShadow = "0px 0px 30px rgb(49, 49, 49)";
+
+      techLogos.forEach((techLogo) => {
+        techLogo.addEventListener("mouseenter", () => {
+          techLogo.style.scale = 1;
+        });
+      });
     }
   });
 

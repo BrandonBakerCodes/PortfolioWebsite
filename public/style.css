@@ -519,6 +519,34 @@ body {
   border-radius: 5px;
 }
 
+.logos-wrapper {
+  position: absolute;
+  right: 4rem;
+  top: 3.25rem;
+  display: flex;
+  gap: 0.4rem;
+}
+
+.logo-container {
+  padding: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid rgb(192, 189, 189);
+  border-radius: 50%;
+}
+
+.project-card div.logo-container img {
+  height: 35px;
+  width: 35px;
+  border-radius: 15%;
+}
+
+.bg-white {
+  background-color: white;
+}
+
 .project-card p {
   position: absolute;
   top: 20rem;
@@ -1147,6 +1175,14 @@ footer ul li a i:hover {
     left: 2rem;
   }
 
+  .logos-wrapper {
+    right: 1.5rem;
+    top: 2.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 8rem;
+  }
+
   .ourkitchen-background {
     background-size: cover;
   }
@@ -1304,7 +1340,7 @@ footer ul li a i:hover {
   }
 
   .project-card-bg {
-    height: 12.5rem;
+    height: 17rem;
   }
 
   .buttons-wrapper {
@@ -1349,6 +1385,16 @@ footer ul li a i:hover {
 
   .project-card h2 {
     font-size: 1rem;
+  }
+
+  .logos-wrapper {
+    width: 5rem;
+    top: 2rem;
+    right: 1rem;
+  }
+
+  .buttons-wrapper {
+    margin-top: 0.3rem;
   }
 
   .upproj-card p {
