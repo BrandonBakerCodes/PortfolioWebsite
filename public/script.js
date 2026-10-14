@@ -88,57 +88,87 @@ const slider = document.querySelectorAll(".project-card");
 const nextBtn = document.querySelector(".next-btn");
 const prevBtn = document.querySelector(".prev-btn");
 
-let currentCard = 2;
+const totalCards = slider.length;
+let currentCard = Math.floor(totalCards / 2);
+let previousOffsets = [];
 
 prevBtn.addEventListener("click", () => {
-  if (currentCard > 0) {
-    currentCard--;
-    scrollToCurrentCard(currentCard);
-  }
+  currentCard = (currentCard - 1 + totalCards) % totalCards;
+  scrollToCurrentCard(currentCard);
 });
 
 nextBtn.addEventListener("click", () => {
-  if (currentCard < slider.length - 1) {
-    currentCard++;
-    scrollToCurrentCard(currentCard);
-  }
+  currentCard = (currentCard + 1) % totalCards;
+  scrollToCurrentCard(currentCard);
 });
 
-function scrollToCurrentCard(currentCard) {
-  let totalCards = slider.length;
+function getOffset(index, center) {
+  const half = Math.floor(totalCards / 2);
+  return ((index - center + half + totalCards) % totalCards) - half;
+}
 
+function scrollToCurrentCard(center) {
   const first = slider[0];
   const last = slider[totalCards - 1];
-  const current = slider[currentCard];
   const rowCenter = (first.offsetLeft + last.offsetLeft + last.offsetWidth) / 2;
-  const currentCenter = current.offsetLeft + current.offsetWidth / 2;
-  const shiftX = rowCenter - currentCenter;
+  const step = slider[1].offsetLeft - slider[0].offsetLeft;
+  const wrappedCards = [];
 
-  slider[currentCard].style.transform =
-    `translateX(${shiftX}px) scale(1) rotateY(0deg)`;
-  slider[currentCard].style.zIndex = totalCards;
-  slider[currentCard].style.filter = "none";
-  slider[currentCard].style.opacity = 1;
-  slider[currentCard].style.boxShadow = `0px 4px 10px rgb(156, 156, 156)`;
+  slider.forEach((card, i) => {
+    const offset = getOffset(i, center);
+    const distance = Math.abs(offset);
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+    const shiftX = rowCenter + offset * step - cardCenter;
 
-  let counter = 1;
-  for (let i = currentCard + 1; i < slider.length; i++) {
-    slider[i].style.transform =
-      `translateX(${shiftX}px) scale(${1 - 0.2 * counter}) rotateY(-40deg) perspective(20px)`;
-    slider[i].style.zIndex = totalCards - counter;
-    slider[i].style.filter = `brightness(70%)`;
-    slider[i].style.boxShadow = `0px 0px 30px rgb(49, 49, 49)`;
-    counter++;
-  }
+    const wrapped =
+      previousOffsets[i] !== undefined &&
+      Math.abs(offset - previousOffsets[i]) > 1;
+    previousOffsets[i] = offset;
 
-  counter = 1;
-  for (let i = currentCard - 1; i >= 0; i--) {
-    slider[i].style.transform =
-      `translateX(${shiftX}px) scale(${1 - 0.2 * counter}) rotateY(40deg) perspective(20px)`;
-    slider[i].style.zIndex = totalCards - counter;
-    slider[i].style.filter = `brightness(70%)`;
-    slider[i].style.boxShadow = `0px 0px 30px rgb(49, 49, 49)`;
-    counter++;
+    if (wrapped) {
+      card.style.transition = "none";
+      card.style.opacity = 0;
+      wrappedCards.push(card);
+    }
+
+    card.style.zIndex = totalCards - distance;
+
+    const techLogos = card.querySelectorAll(".logo-container");
+
+    if (distance === 0) {
+      card.style.transform = `translateX(${shiftX}px) scale(1) rotateY(0deg)`;
+      card.style.filter = "none";
+      card.style.boxShadow = "0px 4px 10px rgb(156, 156, 156)";
+
+      techLogos.forEach((techLogo) => {
+        techLogo.addEventListener("mouseenter", () => {
+          techLogo.style.scale = 1.2;
+        });
+
+        techLogo.addEventListener("mouseleave", () => {
+          techLogo.style.scale = 1;
+        });
+      });
+    } else {
+      const tilt = offset > 0 ? -40 : 40;
+      card.style.transform = `translateX(${shiftX}px) scale(${1 - 0.2 * distance}) rotateY(${tilt}deg) perspective(20px)`;
+      card.style.filter = "brightness(70%)";
+      card.style.boxShadow = "0px 0px 30px rgb(49, 49, 49)";
+
+      techLogos.forEach((techLogo) => {
+        techLogo.addEventListener("mouseenter", () => {
+          techLogo.style.scale = 1;
+        });
+      });
+    }
+  });
+
+  if (wrappedCards.length) {
+    void first.offsetWidth;
+    wrappedCards.forEach((card) => {
+      card.style.transition = "";
+      card.style.opacity = 1;
+    });
   }
 }
 
@@ -150,13 +180,25 @@ window.addEventListener("resize", () => {
   }, 150);
 });
 
-scrollToCurrentCard(Math.floor(slider.length / 2));
+scrollToCurrentCard(currentCard);
+
+// If using mobile device, use native video player
+const isMobile =
+  window.matchMedia("(pointer: coarse)").matches ||
+  window.matchMedia("(hover: none)").matches;
 
 const upProjCards = document.querySelectorAll(".upproj-card");
 upProjCards.forEach((card) => {
   card.addEventListener("mouseover", () => {
     card.classList.add("displayed");
   });
+});
+
+upProjCards.forEach((card) => {
+  upProjText = card.querySelector("p");
+  if (isMobile) {
+    upProjText.innerText = "( Click Me! )";
+  }
 });
 
 const msDots = document.querySelector(".mystory-dots");
@@ -255,11 +297,6 @@ const gamerVideoPlayBtn = document.querySelector(
 const gamerVideoPauseBtn = document.querySelector(
   ".gamer-video-container .pause-icon",
 );
-
-// If using mobile device, use native video player
-const isMobile =
-  window.matchMedia("(pointer: coarse)").matches ||
-  window.matchMedia("(hover: none)").matches;
 
 // First video load
 if ((gamerVideoPlayBtn.style.visibility = "visible")) {
