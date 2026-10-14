@@ -134,7 +134,7 @@ function scrollToCurrentCard(currentCard) {
   counter = 1;
   for (let i = currentCard - 1; i >= 0; i--) {
     slider[i].style.transform =
-      `translateX(${shiftX}px) scale(${1 - 0.2 * counter}) rotateY(40deg) perspective(20px)`;
+    `translateX(${shiftX}px) scale(${1 - 0.2 * counter}) rotateY(40deg) perspective(20px)`;
     slider[i].style.zIndex = totalCards - counter;
     slider[i].style.filter = `brightness(70%)`;
     slider[i].style.boxShadow = `0px 0px 30px rgb(49, 49, 49)`;
@@ -152,12 +152,25 @@ window.addEventListener("resize", () => {
 
 scrollToCurrentCard(Math.floor(slider.length / 2));
 
+// If using mobile device, use native video player
+const isMobile =
+  window.matchMedia("(pointer: coarse)").matches ||
+  window.matchMedia("(hover: none)").matches;
+
 const upProjCards = document.querySelectorAll(".upproj-card");
 upProjCards.forEach((card) => {
   card.addEventListener("mouseover", () => {
     card.classList.add("displayed");
   });
 });
+
+upProjCards.forEach((card) => {
+  upProjText = card.querySelector("p");
+    if(isMobile){
+      upProjText.innerText = "( Click Me! )";
+    }
+});
+
 
 const msDots = document.querySelector(".mystory-dots");
 const msMoreText = document.querySelector(".mystory-more-text");
@@ -255,11 +268,6 @@ const gamerVideoPlayBtn = document.querySelector(
 const gamerVideoPauseBtn = document.querySelector(
   ".gamer-video-container .pause-icon",
 );
-
-// If using mobile device, use native video player
-const isMobile =
-  window.matchMedia("(pointer: coarse)").matches ||
-  window.matchMedia("(hover: none)").matches;
 
 // First video load
 if ((gamerVideoPlayBtn.style.visibility = "visible")) {

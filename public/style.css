@@ -659,14 +659,24 @@ body {
 
 .question-icon {
   position: absolute;
-  top: 45%;
+  top: 37.5%;
   left: 37.5%;
   opacity: 1;
   color: rgb(82, 202, 242);
   transition: opacity 1s ease;
 }
 
-.upproj-card.displayed .question-icon {
+.interact-text {
+  position: absolute;
+  top: 75%;
+  opacity: 1;
+  color: rgb(82, 202, 242);
+  font-weight: 400;
+  font-size: 1.25rem;
+  transition: opacity 1s ease;
+}
+
+.upproj-card.displayed .question-icon,  .upproj-card.displayed .interact-text{
   opacity: 0;
 }
 
@@ -1288,7 +1298,6 @@ footer ul li a i:hover {
   }
 
   .question-icon {
-    top: 50%;
     left: 30%;
   }
 
