@@ -505,7 +505,8 @@ body {
   transform-style: flat;
   transition:
     transform 0.4s ease,
-    filter 0.4s ease;
+    filter 0.4s ease,
+    opacity 0.4s ease;
   backface-visibility: hidden;
 }
 
@@ -676,7 +677,8 @@ body {
   transition: opacity 1s ease;
 }
 
-.upproj-card.displayed .question-icon,  .upproj-card.displayed .interact-text{
+.upproj-card.displayed .question-icon,
+.upproj-card.displayed .interact-text {
   opacity: 0;
 }
 
